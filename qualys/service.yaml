@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qualys
+  namespace: namespace
+  labels:
+    app: qualys
+spec:
+  ports:
+    - name: 5002-tcp
+      protocol: TCP
+      port: 5002
+      targetPort: 5002
+  selector:
+    app: qualys
+    deploymentconfig: qualys
+  sessionAffinity: None
+status:
+  loadBalancer: {}
