@@ -13,7 +13,7 @@ spec:
   containers:
 
   - name: qualys
-    image: registry.acp.us-east-1.aws.symcpe.net:443/qualys:latest
+    image: image_name:latest
     resources:
         limits:
           memory: 2Gi
