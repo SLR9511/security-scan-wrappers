@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sonar-server
+spec:
+
+  restartPolicy: Always
+
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+
+  containers:
+
+  - name: sonar-scanner
+    image: image-name:latest
+    resources:
+        limits:
+          memory: 2Gi
+        requests:
+          cpu: 150m
+          memory: 2Gi
