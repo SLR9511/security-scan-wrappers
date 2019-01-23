@@ -66,7 +66,7 @@ def qualys_scan(ip, project, version,message):
 		#csv
 		print "Waiting CSV report for " + index
 		url_report = "https://qualysapi.qualys.com/api/2.0/fo/report/"
-		params_report_csv = {'action': 'launch', 'template_id': '2609020', 'report_type': 'Scan', 'output_format': 'csv'}
+		params_report_csv = {'action': 'launch', 'template_id': template_id, 'report_type': 'Scan', 'output_format': 'csv'}
 		params_report_csv['report_refs'] = scan_ID
 		params_report_csv['report_title'] = "report_" + index
 		header_report = {'X-Requested-With': 'Curl Sample'}
@@ -110,7 +110,7 @@ def qualys_scan(ip, project, version,message):
 		
 		#PDF
 		print "Waiting PDF report for " + index
-		params_report_pdf = {'action': 'launch', 'template_id': '2609020', 'report_type': 'Scan', 'output_format': 'pdf'}
+		params_report_pdf = {'action': 'launch', 'template_id': template_id, 'report_type': 'Scan', 'output_format': 'pdf'}
 		params_report_pdf['report_refs'] = scan_ID
 		params_report_pdf['report_title'] = "report_" + index
 		header_report = {'X-Requested-With': 'Curl Sample'}
