@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: qualys
+spec:
+
+  restartPolicy: Always
+
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+
+  containers:
+
+  - name: qualys
+    image: registry.acp.us-east-1.aws.symcpe.net:443/qualys:latest
+    resources:
+        limits:
+          memory: 2Gi
+        requests:
+          cpu: 150m
+          memory: 2Gi
